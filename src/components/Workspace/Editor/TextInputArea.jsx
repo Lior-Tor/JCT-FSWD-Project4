@@ -1,4 +1,4 @@
-// src/components/Dashboard/TextInputArea.jsx
+// src/components/Workspace/Editor/TextInputArea.jsx
 import React from 'react';
 
 export default function TextInputArea({ value, onChange }) {

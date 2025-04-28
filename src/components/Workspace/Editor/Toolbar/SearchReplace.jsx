@@ -1,4 +1,4 @@
-// src/components/Dashboard/Toolbar/SearchReplace.jsx
+// src/components/Workspace/Editor/Toolbar/SearchReplace.jsx
 import React, { useState } from 'react';
 
 export default function SearchReplace({ content, onReplace }) {

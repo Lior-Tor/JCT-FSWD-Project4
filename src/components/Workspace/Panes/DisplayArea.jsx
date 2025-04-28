@@ -1,4 +1,4 @@
-// src/components/Dashboard/DisplayArea.jsx
+// src/components/Workspace/Panes/DisplayArea.jsx
 import React from 'react';
 
 export default function DisplayArea({ content, style }) {
@@ -10,7 +10,7 @@ export default function DisplayArea({ content, style }) {
         fontFamily: style.fontFamily,
         fontSize: fontSizes[style.fontSize] || fontSizes.medium,
         color: style.color,
-        whiteSpace: 'pre-wrap'
+        whiteSpace: 'pre-wrap' // Preserve whitespace and line breaks of the TextInputArea.jsx component
       }}
     >
       {content}

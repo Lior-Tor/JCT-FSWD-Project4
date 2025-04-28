@@ -1,4 +1,4 @@
-// src/components/Dashboard/Keyboard.jsx
+// src/components/Workspace/Editor/Keyboard.jsx
 import React, { useState } from 'react';
 
 const layouts = {
@@ -13,9 +13,6 @@ const layouts = {
     row2: ['ק','ר','א','ט','ו','ן','ם','פ','[',']'],
     row3: ['ש','ד','ג','כ','ע','י','ח','ל','ך',';',"'" ],
     row4: ['ז','ס','ב','ה','נ','מ','צ','ת','ץ',',','.','/']
-  },
-  emoji: {
-    row1: ['😀','😂','❤️','👍','🙏','🎉','😎','🔥']
   }
 };
 
@@ -39,8 +36,8 @@ export default function Keyboard({ language = 'en', onKeyPress }) {
 
     // letters: only English has casing
     if (/^[a-z]$/i.test(key)) {
-      const upper = (capsLock && !shift) || (!capsLock && shift);
-      char = upper ? key.toUpperCase() : key.toLowerCase();
+      const upper = (capsLock && !shift) || (!capsLock && shift); // Toggle case based on capsLock and shift
+      char = upper ? key.toUpperCase() : key.toLowerCase(); // If upper is true, convert to uppercase, else lowercase
     }
     // punctuation: apply shift mapping if active
     else if (shift && shiftMap[key]) {
@@ -50,19 +47,6 @@ export default function Keyboard({ language = 'en', onKeyPress }) {
     onKeyPress(char);
     if (shift) setShift(false);
   };
-
-  // Emoji layout
-  if (language === 'emoji') {
-    return (
-      <div className="keyboard">
-        {layouts.emoji.row1.map((k,i) => (
-          <button key={i} onClick={() => onKeyPress(k)}>
-            {k}
-          </button>
-        ))}
-      </div>
-    );
-  }
 
   // Hebrew & English share row logic
   const { row1, row2, row3, row4 } = layouts[language] || layouts.en;

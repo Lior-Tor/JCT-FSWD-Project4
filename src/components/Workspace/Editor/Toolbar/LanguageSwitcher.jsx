@@ -1,10 +1,9 @@
-// src/components/Dashboard/Toolbar/LanguageSwitcher.jsx
+// src/components/Workspace/Editor/Toolbar/LanguageSwitcher.jsx
 import React from 'react';
 
 const langs = [
   { label: 'English', value: 'en' },
-  { label: 'Hebrew', value: 'he' },
-  { label: 'Emoji', value: 'emoji' }
+  { label: 'Hebrew', value: 'he' }
 ];
 
 export default function LanguageSwitcher({ currentLanguage, onChange }) {

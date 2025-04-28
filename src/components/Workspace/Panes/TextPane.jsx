@@ -1,4 +1,4 @@
-// src/components/Dashboard/TextPane.jsx
+// src/components/Workspace/Panes/TextPane.jsx
 import React from 'react';
 import DisplayArea from './DisplayArea';
 

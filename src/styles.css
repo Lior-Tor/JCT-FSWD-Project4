@@ -24,7 +24,7 @@ body {
 .app-background {
   min-height: 100vh;
   background-image: url('../images/banner.png');
-  background-repeat: repeat;
+  background-repeat: repeat; /* repeat the image so it fills the blank space */
   background-size: contain;
   background-position: top center;
   display: flex;
@@ -46,7 +46,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-  padding-bottom: 450px; /* space for fixed editor */
+  padding-bottom: 500px; /* space for fixed editor */
 }
 
 /* 4. Authentication pages */
@@ -64,10 +64,11 @@ header {
 .auth-container .btn-primary {
   background: #007bff;
   color: white;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 .auth-container .btn-primary:hover {
-  transform: scale(1.05);
+  background-color: #C2876A;
+  transform: scale(1.1);
 }
 .auth-form {
   display: flex;
@@ -212,12 +213,13 @@ header {
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
-/* Dashboard header button colors and scale animation */
+/* Dashboard header button */
 .dashboard-header button {
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .dashboard-header button:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .dashboard-header .btn-primary {
   background: #007bff;
@@ -232,15 +234,15 @@ header {
   color: white;
 }
 
-/* ActionButtons: box-shadow on hover and specific colors */
+/* ActionButtons */
 .action-buttons button {
   gap: 0.5rem;
   transition: box-shadow 0.2s;
-  background: #343a40; /* grey-black default for delete/search */
+  background: #343a40;
   color: white;
 }
 .action-buttons button:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 3px 6px 10px rgba(0,0,0,0.3);
 }
 .action-buttons button:nth-child(4) {
   background: #6f42c1; /* purple for Undo */
@@ -252,7 +254,7 @@ header {
   background: #007bff; /* blue for Save */
 }
 
-/* SearchReplace: box-shadow on hover, grey-black buttons */
+/* SearchReplace */
 .toolbar-search-replace button {
   transition: box-shadow 0.2s;
   background: #343a40;

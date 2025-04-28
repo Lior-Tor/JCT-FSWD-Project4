@@ -1,4 +1,4 @@
-// src/components/Dashboard/ActionButtons.jsx
+// src/components/Workspace/Editor/ActionButtons.jsx
 import React from 'react';
 
 export default function ActionButtons({
@@ -37,21 +37,21 @@ export default function ActionButtons({
         className="btn btn-secondary"
         onClick={onUndo}
       >
-        Undo
+        🔙 Undo
       </button>
       <button
         type="button"
         className="btn btn-secondary"
         onClick={onClose}
       >
-        Close
+        ❌ Close
       </button>
       <button
         type="button"
         className="btn btn-primary"
         onClick={onSave}
       >
-        Save
+        📁 Save
       </button>
     </div>
   );

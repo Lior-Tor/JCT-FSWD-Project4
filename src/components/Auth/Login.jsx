@@ -7,11 +7,14 @@ export default function Login({ onLogin, switchToRegister }) {
   const [password, setPassword] = useState('');
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission behavior which would refresh the page
+    // Retrieve the user from localStorage using the provided email. The storedUser object contains the user's fullName, email, and password.
     const storedUser = getUserByEmail(email);
-    if (storedUser && storedUser.password === password) {
-      // pass only the info we need downstream
-      onLogin({ fullName: storedUser.fullName, email: storedUser.email });
+    if (!storedUser) {
+      alert('Account not registered. Please register first.');
+    }
+    else if (storedUser && storedUser.password === password) {
+      onLogin({ fullName: storedUser.fullName, email: storedUser.email }); // Call the onLogin function (handleLogin) passed as a prop with the user's details
     } else {
       alert('Invalid email or password');
     }
@@ -49,7 +52,7 @@ export default function Login({ onLogin, switchToRegister }) {
         <button
           type="button"
           className="btn btn-secondary"
-          onClick={switchToRegister}
+          onClick={switchToRegister} // Call the switchToRegister function passed as a prop to switch to the registration view
         >
           Register
         </button>

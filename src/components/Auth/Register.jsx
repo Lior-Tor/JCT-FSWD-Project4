@@ -9,7 +9,7 @@ export default function Register({ onRegister, switchToLogin }) {
   const [confirm, setConfirm] = useState('');
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission behavior which would refresh the page
     if (password !== confirm) {
       alert('Passwords do not match');
       return;
@@ -18,9 +18,8 @@ export default function Register({ onRegister, switchToLogin }) {
       alert('A user with that email already exists');
       return;
     }
-    // persist new user
-    saveUser({ fullName, email, password });
-    onRegister({ fullName, email });
+    saveUser({ fullName, email, password }); // Save the new user to localStorage
+    onRegister({ fullName, email }); // Call the onRegister function (handleRegister) passed as a prop with the user's details
   };
 
   return (
@@ -73,7 +72,7 @@ export default function Register({ onRegister, switchToLogin }) {
         <button
           type="button"
           className="btn btn-secondary"
-          onClick={switchToLogin}
+          onClick={switchToLogin} // Call the switchToLogin function passed as a prop to switch to the login view
         >
           Login
         </button>
