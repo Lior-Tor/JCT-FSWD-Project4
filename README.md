@@ -5,5 +5,5 @@
 Project 4 for JCT course of Full Stack Web Development (FSWD).
 
 Collaborators:
-- Lior Tordjman
-- Aaron Zibi
+- [Lior Tordjman](https://github.com/Lior-Tor)
+- [Aaron Zibi](https://github.com/Aaron-Zibi)
